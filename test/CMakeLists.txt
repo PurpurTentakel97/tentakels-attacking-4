@@ -1,5 +1,5 @@
 add_executable(tests
-               Test_Temporary.cpp
+               Test_Components.cpp
 )
 
 target_link_libraries(tests

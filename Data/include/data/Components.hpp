@@ -9,8 +9,13 @@
 #include <cpt/Types.hpp>
 #include <raylib.h>
 #include <variant>
+#include <stdexcept>
 
 namespace data {
+    class BadComponentError final : public std::logic_error {
+        using std::logic_error::logic_error;
+    };
+
     struct SpaceObject final {
         cpt::usize id;
         cpt::usize x, y;

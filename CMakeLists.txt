@@ -20,7 +20,7 @@ include(${PROJECT_SOURCE_DIR}/lib_dependencies.cmake)
 find_lib_packages()
 add_subdirectory(Data data)
 
-if (${ui_lib_tests})
+if (${attacking_tests})
     enable_testing()
 
     include(${PROJECT_SOURCE_DIR}/test_dependencies.cmake)

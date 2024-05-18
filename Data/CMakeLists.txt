@@ -1,9 +1,9 @@
 add_library(data
             STATIC
             include/data/GameObject.hpp
-            temporary.cpp
             include/data/Components.hpp
             include/data/Galaxy.hpp
+            temporary.cpp
 )
 
 target_include_directories(data

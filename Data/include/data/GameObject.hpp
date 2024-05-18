@@ -18,16 +18,21 @@ namespace data {
         template<ComponentType T>
         [[nodiscard]] tl::optional<T> get_component() const {
             for (auto const& c : m_components) {
-                if (std::holds_alternative<T>(m_components)) {
-                    return std::get<T>(m_components);
+                if (std::holds_alternative<T>(c)) {
+                    return std::get<T>(c);
                 }
             }
             return {};
         }
 
         template<ComponentType T>
-        void add(T component) {
-            m_components.emplace_back(std::forward<decltype(component)>(component));
+        GameObject& add(T component) {
+            if (get_component<T>().has_value()) {
+                throw BadComponentError("add of already existing component");
+            } else {
+                m_components.emplace_back(std::forward<decltype(component)>(component));
+            }
+            return *this;
         }
     };
 } // namespace data
