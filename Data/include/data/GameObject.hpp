@@ -16,8 +16,18 @@ namespace data {
 
     public:
         template<ComponentType T>
-        [[nodiscard]] tl::optional<T> get_component() const {
+        [[nodiscard]] tl::optional<T const&> get_component() const {
             for (auto const& c : m_components) {
+                if (std::holds_alternative<T>(c)) {
+                    return std::get<T>(c);
+                }
+            }
+            return {};
+        }
+
+        template<ComponentType T>
+        [[nodiscard]] tl::optional<T&> get_component() {
+            for (auto& c : m_components) {
                 if (std::holds_alternative<T>(c)) {
                     return std::get<T>(c);
                 }
