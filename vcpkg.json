@@ -15,17 +15,10 @@
     ]
   },
   "dependencies": [
-    {
-      "name": "gtest",
-      "version>=": "1.14.0"
-    },
-    {
-      "name": "cpt-lib",
-      "version>=": "1.0.0"
-    },
-    {
-      "name": "spdlog",
-      "version>=": "1.13.0"
-    }
+    "gtest",
+    "cpt-lib",
+    "spdlog",
+    "tl-optional",
+    "raylib"
   ]
 }

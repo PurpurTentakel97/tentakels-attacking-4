@@ -18,7 +18,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 include(${PROJECT_SOURCE_DIR}/project_options.cmake)
 include(${PROJECT_SOURCE_DIR}/lib_dependencies.cmake)
 find_lib_packages()
-add_subdirectory(src bin)
+add_subdirectory(Data data)
 
 if (${ui_lib_tests})
     enable_testing()

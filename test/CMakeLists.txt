@@ -4,7 +4,7 @@ add_executable(tests
 
 target_link_libraries(tests
                       PRIVATE
-                      tentakels-attacking
+                      data
                       GTest::gtest_main
 )
 
